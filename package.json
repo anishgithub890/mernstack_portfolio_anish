@@ -1,0 +1,21 @@
+{
+  "name": "mernstack_portfolio_anish",
+  "version": "1.0.0",
+  "description": "![amazon](/frontend/public/images/home.png)",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd backend && npm install  && cd ../frontend && npm install && npm run build",
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anishgithub890/mernstack_portfolio_anish.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anishgithub890/mernstack_portfolio_anish/issues"
+  },
+  "homepage": "https://github.com/anishgithub890/mernstack_portfolio_anish#readme"
+}
