@@ -45,23 +45,23 @@ function ContactScreen() {
       <Helmet>
         <title>CONTACT</title>
       </Helmet>
-      <Container className="large-container">
-        <h2 className="head-text">Take a coffe & Chart with me</h2>
-        <div className="app__footer-cards">
-          <div className="app__footer-card">
-            <img src={images.email} alt="email" />
-            <a href="mailto:anishchaudhary890@gmail.com" className="p-text">
-              anishchaudhary890@gmail.com
-            </a>
-          </div>
-          <div className="app__footer-card">
-            <img src={images.mobile} alt="mobile" />
-            <a href="tel: +97798456955**" className="p-text">
-              +97798456955**
-            </a>
-          </div>
-        </div>
 
+      <h2 className="head-text">Take a coffe & Chart with me</h2>
+      <div className="app__footer-cards">
+        <div className="app__footer-card">
+          <img src={images.email} alt="email" />
+          <a href="mailto:anishchaudhary890@gmail.com" className="p-text">
+            anishchaudhary890@gmail.com
+          </a>
+        </div>
+        <div className="app__footer-card">
+          <img src={images.mobile} alt="mobile" />
+          <a href="tel: +97798456955**" className="p-text">
+            +97798456955**
+          </a>
+        </div>
+      </div>
+      <Container className="small-container">
         <Form onSubmit={submitHandler}>
           <Form.Group className="mb-3" controlId="name">
             <Form.Label>Name</Form.Label>
@@ -78,14 +78,17 @@ function ContactScreen() {
           </Form.Group>
           <Form.Group className="mb-3" controlId="message">
             <Form.Label>Message</Form.Label>
+
             <Form.Control
+              as="textarea"
               type="message"
               required
               onChange={(e) => setMessage(e.target.value)}
             />
           </Form.Group>
-          <div className="mb-3">
-            <Button type="submit">Sign Up</Button>
+
+          <div className="button">
+            <Button type="submit">SUBMIT</Button>
           </div>
         </Form>
       </Container>
