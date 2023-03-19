@@ -10,7 +10,7 @@ import skillRouter from "./routes/skilRoutes.js";
 import reviewRouter from "./routes/reviewRoutes.js";
 import experienceRouter from "./routes/experienceRoute.js";
 import userRouter from "./routes/userRoutes.js";
-import brandRouter from "./routes/brandRoutes.js";
+
 import uploadRouter from "./routes/uploadRoutes.js";
 import dashboardRouter from "./routes/dashboarRoutes.js";
 import contactRouter from "./routes/contactRoutes.js";
@@ -39,7 +39,6 @@ app.use("/api/works", workRouter);
 app.use("/api/skills", skillRouter);
 app.use("/api/experiences", experienceRouter);
 app.use("/api/reviews", reviewRouter);
-app.use("/api/brands", brandRouter);
 app.use("/api/users", userRouter);
 app.use("/api/dashboards", dashboardRouter);
 

@@ -14,8 +14,6 @@ const reducer = (state, action) => {
       return { ...state, loading: true };
     case "FETCH_SUCCESS":
       return { ...state, reviews: action.payload, loading: false };
-    case "FETCH_SUCCESS_BRAND":
-      return { ...state, brands: action.payload, loading: false };
     case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
     default:
@@ -24,9 +22,8 @@ const reducer = (state, action) => {
 };
 
 function Testimonial() {
-  const [{ loading, error, reviews, brands }, dispatch] = useReducer(reducer, {
+  const [{ loading, error, reviews }, dispatch] = useReducer(reducer, {
     reviews: [],
-    brands: [],
     loading: true,
     error: "",
   });
@@ -37,19 +34,6 @@ function Testimonial() {
       try {
         const result = await axios.get("/api/reviews");
         dispatch({ type: "FETCH_SUCCESS", payload: result.data });
-      } catch (err) {
-        dispatch({ type: "FETCH_FAIL", payload: err.message });
-      }
-    };
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      dispatch({ type: "FETCH_REQUEST" });
-      try {
-        const result = await axios.get("/api/brands");
-        dispatch({ type: "FETCH_SUCCESS_BRAND", payload: result.data });
       } catch (err) {
         dispatch({ type: "FETCH_FAIL", payload: err.message });
       }
@@ -89,18 +73,6 @@ function Testimonial() {
             </motion.div>
           ))
         )}
-      </div>
-
-      <div className="app__testimonial-brands app__flex">
-        {brands.map((brand) => (
-          <motion.div
-            whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 0.5, type: "tween" }}
-            key={brand.slug}
-          >
-            <img src={brand.brand_image} alt={brand.name} />
-          </motion.div>
-        ))}
       </div>
     </>
   );

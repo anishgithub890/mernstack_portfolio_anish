@@ -7,7 +7,6 @@ import Work from "../models/workModel.js";
 import Skill from "../models/skillModel.js";
 import Experience from "../models/experienceModel.js";
 import Review from "../models/reviewModel.js";
-import Brand from "../models/brandModel.js";
 import Contact from "../models/contactModel.js";
 import { isAuth, isAdmin } from "../utils.js";
 
@@ -34,7 +33,6 @@ dashboardRouter.post(
       skill: req.skill._id,
       review: req.review._id,
       experience: req.experience._id,
-      brand: req.brand._id,
       contact: req.contact._id,
     });
 
@@ -96,14 +94,6 @@ dashboardRouter.get(
         },
       },
     ]);
-    const brands = await Brand.aggregate([
-      {
-        $group: {
-          _id: null,
-          numBrands: { $sum: 1 },
-        },
-      },
-    ]);
 
     const contacts = await Contact.aggregate([
       {
@@ -121,7 +111,6 @@ dashboardRouter.get(
       skills,
       experiences,
       reviews,
-      brands,
       contacts,
     });
   })

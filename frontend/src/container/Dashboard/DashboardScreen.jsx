@@ -135,18 +135,7 @@ export default function DashboardScreen() {
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={2} className="dashboard">
-              <Card>
-                <Card.Body>
-                  <Card.Title>
-                    {summary.brands && summary.brands[0]
-                      ? summary.brands[0].numBrands
-                      : 0}
-                  </Card.Title>
-                  <Card.Text>BRAND DATA</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
+
             <Col md={4} className="dashboard">
               <Card>
                 <Card.Body>
