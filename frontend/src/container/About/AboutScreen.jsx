@@ -55,10 +55,10 @@ function AboutScreen() {
   ) : (
     <div>
       <Row>
-        <Col md={6}>
+        <Col md={3}>
           <img className="img-large" src={about.image} alt={about.title}></img>
         </Col>
-        <Col md={3}>
+        <Col md={9}>
           <ListGroup variant="flush">
             <ListGroup.Item>
               <Helmet>
