@@ -180,6 +180,7 @@ export default function AboutEditScreen() {
           <Form.Group className="mb-3" controlId="description">
             <Form.Label>Description</Form.Label>
             <Form.Control
+              as="textarea"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required

@@ -190,6 +190,7 @@ export default function ReviewEditScreen() {
           <Form.Group className="mb-3" controlId="feedback">
             <Form.Label>Feedback</Form.Label>
             <Form.Control
+              as="textarea"
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               required
