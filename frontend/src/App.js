@@ -121,7 +121,7 @@ function App() {
                         <NavDropdown.Item>Skills</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/admin/reviews">
-                        <NavDropdown.Item>Reviews</NavDropdown.Item>
+                        <NavDropdown.Item>Testimonial</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/admin/contacts">
                         <NavDropdown.Item>Contact</NavDropdown.Item>
