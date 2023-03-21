@@ -1,7 +1,7 @@
 {
   "name": "mernstack_portfolio_anish",
   "version": "1.0.0",
-  "description": "![amazon](/frontend/public/images/home.png)",
+  "description": "![portfolio](/frontend/public/images/home.png)",
   "main": "index.js",
   "scripts": {
     "build": "cd backend && npm install  && cd ../frontend && npm install && npm run build",

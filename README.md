@@ -1,6 +1,6 @@
 # MERNSTACK PORTFOLIO
 
-![amazon](/frontend/public/images/home.png)
+![portfolio](/frontend/public/images/home.png)
 
 # React Tutorial - Build Personal Portfolio
 
