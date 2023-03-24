@@ -1,59 +1,43 @@
-import React, { useEffect, useReducer, useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import "./About.scss";
-import { motion } from "framer-motion";
-import { AppWrap, MotionWrap } from "../../wrapper";
-import { Helmet } from "react-helmet-async";
-import LoadingBox from "../../components/LoadingBox";
-import MessageBox from "../../components/MessageBox";
+import React, { useEffect, useReducer } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import './About.scss';
+import { motion } from 'framer-motion';
+import { AppWrap, MotionWrap } from '../../wrapper';
+import { Helmet } from 'react-helmet-async';
+import LoadingBox from '../../components/LoadingBox';
+import MessageBox from '../../components/MessageBox';
 //import data from "../../data";
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "FETCH_REQUEST":
+    case 'FETCH_REQUEST':
       return { ...state, loading: true };
-    case "FETCH_SUCCESS":
+    case 'FETCH_SUCCESS':
       return { ...state, abouts: action.payload, loading: false };
-    case "FETCH_FAIL":
+    case 'FETCH_FAIL':
       return { ...state, loading: false, error: action.payload };
     default:
       return state;
   }
 };
 
-const ReadMore = ({ children }) => {
-  const text = children;
-  const [isReadMore, setIsReadMore] = useState(true);
-  const toggleReadMore = () => {
-    setIsReadMore(!isReadMore);
-  };
-  return (
-    <p className="text">
-      {isReadMore ? text.slice(0, 100) : text}
-      <span onClick={toggleReadMore} className="read-or-hide">
-        {isReadMore ? "...read more" : " show less"}
-      </span>
-    </p>
-  );
-};
-
 function About() {
   const [{ loading, error, abouts }, dispatch] = useReducer(reducer, {
     abouts: [],
     loading: true,
-    error: "",
+    error: '',
   });
 
   //const [abouts, setAbouts] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      dispatch({ type: "FETCH_REQUEST" });
+      dispatch({ type: 'FETCH_REQUEST' });
       try {
-        const result = await axios.get("/api/abouts");
-        dispatch({ type: "FETCH_SUCCESS", payload: result.data });
+        const result = await axios.get('/api/abouts');
+        dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (err) {
-        dispatch({ type: "FETCH_FAIL", payload: err.message });
+        dispatch({ type: 'FETCH_FAIL', payload: err.message });
       }
 
       // setAbouts(result.data);
@@ -79,7 +63,7 @@ function About() {
             <motion.div
               whileInView={{ opacity: 1 }}
               whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.5, type: "tween" }}
+              transition={{ duration: 0.5, type: 'tween' }}
               className="app__profile-item"
               key={about.slug}
             >
@@ -93,7 +77,8 @@ function About() {
               </Link>
               <Link to={`/about/${about.slug}`}>
                 <h4 className="p-text" style={{ marginTop: 10 }}>
-                  <ReadMore>{about.description}</ReadMore>
+                  {about.description.substring(0, 100)}{' '}
+                  <strong>...readmore</strong>
                 </h4>
               </Link>
             </motion.div>
@@ -105,7 +90,7 @@ function About() {
 }
 
 export default AppWrap(
-  MotionWrap(About, "app__about"),
-  "about",
-  "app__whitebg"
+  MotionWrap(About, 'app__about'),
+  'about',
+  'app__whitebg'
 );

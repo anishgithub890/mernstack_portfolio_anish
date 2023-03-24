@@ -1,41 +1,41 @@
-import React, { useContext } from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Container from "react-bootstrap/Container";
-import About from "./container/About/About";
-import AboutScreen from "./container/About/AboutScreen";
-import { LinkContainer } from "react-router-bootstrap";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "./App.scss";
-import Header from "./container/Header/Header";
-import Skills from "./container/Skills/Skills";
-import Work from "./container/Work/Work";
-import Testimonial from "./container/Testimonial/Testimonial";
-import PageNotFound from "./container/PageNotFound/PageNotFound";
-import Contact from "./container/Contact/ContactScreen";
-import SigninScreen from "./container/Signin/SigninScreen";
-import { Store } from "./Store";
-import SignupScreen from "./container/Signup/SignupScreen";
-import ProfileScreen from "./container/Profile/ProfileScreen";
-import ProtectedRoute from "./components/ProtectedRoute";
-import UserListScreen from "./container/UserList/UserListScreen";
-import UserEditScreen from "./container/UserEdit/UserEditScreen";
-import AdminRoute from "./components/AdminRoute";
-import AboutEditScreen from "./container/aboutEdit/AboutEditScreen";
-import AboutListScreen from "./container/aboutList/AboutListScreen";
-import WorkListScreen from "./container/WorkList/WorkListScreen";
-import WorkEditScreen from "./container/WorkEdit/WorkEditScreen";
-import ExperienceListScreen from "./container/ExperienceList/ExperienceListScreen";
-import ExperienceEditScreen from "./container/ExperienceEdit/ExperienceEditScreen";
-import SkillListScreen from "./container/SkillList/SkillListScreen";
-import SkillEditScreen from "./container/SkillEdit/SkillEditScreen";
-import ReviewListScreen from "./container/ReviewList/ReviewListScreen";
-import ReviewEditScreen from "./container/ReviewEdit/ReviewEditScreen";
-import DashboardScreen from "./container/Dashboard/DashboardScreen";
-import ContactListScreen from "./container/ContactList/ContactListScreen";
+import React, { useContext } from 'react';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from 'react-bootstrap/Container';
+import About from './container/About/About';
+import AboutScreen from './container/About/AboutScreen';
+import { LinkContainer } from 'react-router-bootstrap';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './App.scss';
+import Header from './container/Header/Header';
+import Skills from './container/Skills/Skills';
+import Work from './container/Work/Work';
+import Testimonial from './container/Testimonial/Testimonial';
+import PageNotFound from './container/PageNotFound/PageNotFound';
+import Contact from './container/Contact/ContactScreen';
+import SigninScreen from './container/Signin/SigninScreen';
+import { Store } from './Store';
+import SignupScreen from './container/Signup/SignupScreen';
+import ProfileScreen from './container/Profile/ProfileScreen';
+import ProtectedRoute from './components/ProtectedRoute';
+import UserListScreen from './container/UserList/UserListScreen';
+import UserEditScreen from './container/UserEdit/UserEditScreen';
+import AdminRoute from './components/AdminRoute';
+import AboutEditScreen from './container/aboutEdit/AboutEditScreen';
+import AboutListScreen from './container/aboutList/AboutListScreen';
+import WorkListScreen from './container/WorkList/WorkListScreen';
+import WorkEditScreen from './container/WorkEdit/WorkEditScreen';
+import ExperienceListScreen from './container/ExperienceList/ExperienceListScreen';
+import ExperienceEditScreen from './container/ExperienceEdit/ExperienceEditScreen';
+import SkillListScreen from './container/SkillList/SkillListScreen';
+import SkillEditScreen from './container/SkillEdit/SkillEditScreen';
+import ReviewListScreen from './container/ReviewList/ReviewListScreen';
+import ReviewEditScreen from './container/ReviewEdit/ReviewEditScreen';
+import DashboardScreen from './container/Dashboard/DashboardScreen';
+import ContactListScreen from './container/ContactList/ContactListScreen';
 //import data from "./data";
 
 function App() {
@@ -43,9 +43,9 @@ function App() {
   const { userInfo } = state;
 
   const signoutHandler = () => {
-    ctxDispatch({ type: "USER_SIGNOUT" });
-    localStorage.removeItem("userInfo");
-    window.location.href = "/signin";
+    ctxDispatch({ type: 'USER_SIGNOUT' });
+    localStorage.removeItem('userInfo');
+    window.location.href = '/signin';
   };
 
   return (
@@ -96,7 +96,7 @@ function App() {
                     </NavDropdown>
                   ) : (
                     <Link className="nav-link" to="/signin">
-                      Sign In{" "}
+                      Sign In{' '}
                     </Link>
                   )}
                   {userInfo && userInfo.isAdmin && (
